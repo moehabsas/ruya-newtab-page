@@ -1,0 +1,154 @@
+/* Basic Font */
+@font-face {
+  font-family: "SF-Pro";
+  src: url("../../public/fonts/SF-Pro.ttf") format("truetype");
+}
+
+* {
+  /* Reset default spacing */
+  padding: 0;
+  margin: 0;
+
+  /* Box model settings */
+  box-sizing: border-box;
+
+  /* Background and borders */
+  background-color: unset;
+  border: none;
+  outline: none;
+
+  /* Typography */
+  font-family: "SF-Pro", cursive, sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: var(--txt-main);
+  text-align: start;
+  text-decoration: none;
+
+  /* Scroll behavior */
+  scrollbar-width: none;
+  scrollbar-color: var(--txt-main) rgba(0, 0, 0, 0);
+  scroll-behavior: smooth;
+
+  /* Transitions and animations */
+  transition: 500ms;
+}
+
+body {
+  height: 100vh;
+  background: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > menu {
+    display: grid;
+    gap: 17px;
+    grid-template-columns: repeat(1, auto);
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 1;
+
+    & > * {
+      height: 43px;
+    }
+
+    label {
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      padding: 10px;
+      @extend .special-bg--border;
+
+      svg {
+        width: 100%;
+        stroke-width: 4px;
+      }
+    }
+  }
+
+  &[dir="rtl"] {
+    & > menu {
+      right: unset;
+      left: 25px;
+    }
+  }
+
+  & > main {
+    overflow: scroll;
+    @extend .overlay;
+  }
+
+  & > img {
+    z-index: -1;
+    @extend .overlay;
+  }
+}
+
+svg {
+  fill: none;
+  stroke: var(--txt-main);
+  stroke-width: 0.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  aspect-ratio: 1/1;
+
+  &[data-fill="true"] {
+    stroke-width: 0;
+    fill: var(--txt-main);
+  }
+}
+
+img {
+  object-fit: fill;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+[disabled] {
+  cursor: not-allowed;
+  opacity: 40%;
+}
+
+/* Global Classes */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @extend .full-block;
+}
+
+.full-block {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.icon--text {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+}
+
+.centered-x {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.over-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.special-bg--border {
+  border: 1px solid var(--border);
+  background-color: var(--bg-sec);
+  outline: 1px dashed transparent;
+
+  &:is(:hover, [data-focused="true"]) {
+    outline-color: var(--clr-primary) !important;
+  }
+}

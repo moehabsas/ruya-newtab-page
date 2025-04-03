@@ -1,0 +1,29 @@
+/* Default theme */
+:root {
+  /* Background colors */
+  --bg-main: black;
+  --bg-sec: #0A192F;
+
+  /* Text colors */
+  --txt-main: white;
+  --txt-sec: rgb(133, 133, 133);
+
+  /* Border colors */
+  --border: rgba(255, 255, 255, 0.15);
+
+  /* Main colors */
+  --clr-primary: #00AEEF;
+}
+
+[data-theme="light"] {
+  /* Background colors */
+  --bg-main: white;
+  --bg-sec: rgb(241, 241, 241);
+
+  /* Text colors */
+  --txt-main: black;
+  --txt-sec: rgb(54, 54, 54);
+
+  /* Main colors */
+  --clr-primary: #0099ff;
+}

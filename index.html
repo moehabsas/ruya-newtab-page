@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-msid="pt">.</title>
+  <link rel="stylesheet" href="dist/css/custom.css" />
+  <link rel="shortcut icon" href="public/imgs/favicon.svg" type="image/svg+xml" />
+</head>
+
+<body>
+  <img src="public/imgs/custom.bg.png" draggable="false" />
+
+  <menu>
+    <label>
+      <svg viewBox="0 0 64 64" aria-label="World">
+        <path d="M34.53,14.59s-1.6,18.21-24,32.78"></path>
+        <line x1="7.35" y1="14.59" x2="41.46" y2="14.59"></line>
+        <line x1="24.4" y1="9.08" x2="24.4" y2="14.59"></line>
+        <path d="M16.76,22.05S25.2,36.8,32,41.33"></path>
+        <path d="M33.55,54.92l10.74-25a.89.89,0,0,1,1.63,0l10.73,25"></path>
+        <line x1="37.25" y1="46.3" x2="52.96" y2="46.3"></line>
+      </svg>
+    </label>
+  </menu>
+
+  <main>
+    <section class="content-frame">
+      <span class="logo-box" role="img">
+        <img src="public/imgs/custom.logo.png" alt="Ru'ya Company Logo" draggable="false" />
+      </span>
+
+      <div class="search-container">
+        <form id="searcher" class="input-wrapper">
+          <img name="favicon" data-mode="text" draggable="false" />
+
+          <div data-mode="url">
+            <svg viewBox="0 0 24 24" aria-label="Link">
+              <path
+                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244">
+              </path>
+            </svg>
+          </div>
+
+          <input name="query" type="text" maxlength="200" autocomplete="off" data-msid="sbt" required />
+
+          <label for="cleaner">
+            <input id="cleaner" name="cleaner" type="reset" hidden />
+            <svg viewBox="0 0 24 24" class="full-block" aria-label="X mark">
+              <path d="M7 17L16.9 7.1" />
+              <path d="M7 7L16.9 16.9" />
+            </svg>
+          </label>
+        </form>
+      </div>
+
+      <div id="shortcuts" class="shortcuts-container" role="toolbar"></div>
+    </section>
+  </main>
+
+  <script type="module" src="dist/js/custom.js" defer></script>
+</body>
+
+</html>

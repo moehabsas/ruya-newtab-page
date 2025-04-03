@@ -1,0 +1,23 @@
+@keyframes showing {
+  from {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    filter: blur(30px);
+  }
+}
+
+@keyframes showing-up {
+  from {
+    translate: 0 20px;
+    filter: blur(20px);
+  }
+}
+
+@keyframes showing-back {
+  from {
+    scale: 0;
+    translate: 0 50px;
+    filter: blur(20px);
+  }
+}

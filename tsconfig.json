@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "strict": true,
+    "allowJs": false,
+    "outDir": "./build/dist/js",
+    "paths": {
+      "@types": ["./src/ts/types"],
+    }
+  },
+  "include": ["./src/ts"]
+}

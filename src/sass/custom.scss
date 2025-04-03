@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+/* Import Themes */
+@import "./lib/themes";
+
+/* Import Global Styles */
+@import "./lib/globals";
+
+/* Custom Styles */
+
+.content-frame {
+  margin-top: 50vh;
+  width: calc(100% - 50px);
+  min-width: 300px;
+  max-width: 580px;
+  @extend .centered-x;
+}
+
+.logo-box {
+  img {
+    animation: showing-back 300ms linear 1;
+    width: 150px;
+    @extend .centered-x;
+  }
+}
+
+.search-container {
+  width: 100%;
+  margin-top: 35px;
+  padding: 0 30px;
+
+  .input-wrapper {
+    padding: 10px;
+    border-radius: 30px;
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    grid-template-rows: var(--height);
+    grid-template-columns: auto 1fr auto;
+    --height: 40px;
+    @extend .special-bg--border;
+
+    &:not([data-active-mode="url"]) [data-mode]:not([data-mode="text"]),
+    &[data-active-mode="url"] [data-mode]:not([data-mode="url"]) {
+      display: none !important;
+    }
+
+    &[data-active-mode="url"] {
+      input[name="query"] {
+        font-weight: 800;
+        color: var(--clr-primary);
+      }
+    }
+
+    > * {
+      height: var(--height);
+    }
+
+    [data-mode] {
+      width: var(--height);
+      border-radius: 50%;
+      animation: showing 200ms linear 1;
+    }
+
+    [data-mode="url"] {
+      background-color: var(--clr-primary);
+      box-shadow: 0 0 5px 1px var(--clr-primary);
+      padding: 10px;
+
+      svg {
+        stroke-width: 2px;
+      }
+    }
+
+    label {
+      width: var(--height);
+      padding: 2px;
+    }
+
+    input {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+
+      &:placeholder-shown + label {
+        width: 0;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.shortcuts-container {
+  margin-top: 30px;
+  --repeat: 7;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+
+  a {
+    flex: 1 1 calc(100% / var(--repeat) - 15px);
+    max-width: calc(100% / var(--repeat) - 15px);
+    padding: 2px;
+    overflow: hidden;
+    animation: showing-up 300ms linear 1;
+
+    div {
+      display: flex;
+      aspect-ratio: 1;
+      padding: 12px;
+      border-radius: 20px;
+      margin-bottom: 9px;
+      @extend .special-bg--border;
+
+      img {
+        border-radius: 10px;
+        @extend .full-block;
+      }
+    }
+
+    p {
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--txt-sec);
+      @extend .over-txt;
+    }
+  }
+
+  @media screen and (max-width: 550px) { & { --repeat: 6 } }
+  @media screen and (max-width: 480px) { & { --repeat: 5 } }
+  @media screen and (max-width: 400px) { & { --repeat: 4 } }
+  @media screen and (max-width: 320px) { & { --repeat: 3 } }
+
+}
+
+/* Import Animations */
+@import "./lib/animations";

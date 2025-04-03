@@ -1,0 +1,42 @@
+{
+  "name": "ruya-newtab-page",
+  "version": "1.0.0",
+  "description": "A customizable new tab page.",
+  "main": "index.html",
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "npx tsc && npm run build:css && npm run build:base",
+    "prebuild:css": "mkdir -p ./build/dist/css",
+    "build:css": "sass ./src/sass/custom.scss:./build/dist/css/custom.css",
+    "build:base": "cp ./index.html ./build/index.html && cp -r ./public ./build/public",
+
+    "dev": "npm run dev:js && npm run dev:css",
+    "dev:js": "npx tsc --outDir ./dist/js",
+    "predev:css": "mkdir -p dist/css",
+    "dev:css": "sass ./src/sass/custom.scss ./dist/css/custom.css",
+
+    "clean": "rm -rf ./build ./dist ./.sass-cache"
+  },
+  "keywords": [
+    "nodejs",
+    "html",
+    "sass",
+    "website",
+    "chrome",
+    "typescript",
+    "tools",
+    "newtab",
+    "ruya"
+  ],
+  "author": {
+    "name": "Mohamed El-Gedawy",
+    "email": "moehabsas@gmail.com",
+    "url": "https://github.com/moehabsas"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.8.2",
+    "sass": "^1.69.0",
+    "concurrently": "^8.2.1"
+  }
+}
