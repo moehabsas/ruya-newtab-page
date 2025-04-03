@@ -63,11 +63,11 @@ npm run clean
 ---
 
 ### 🎯 **Quick Summary**
-✔ **`npm run build`** → Build the project for production.
-✔ **`npm run dev`** → Compile JavaScript & CSS for development.
-✔ **`npm run dev:js`** → Compile JavaScript only.
-✔ **`npm run dev:css`** → Compile CSS only.
-✔ **`npm run clean`** → Remove temporary files and ignored folders.
+#### ✔ **`npm run build`** → Build the project for production.
+#### ✔ **`npm run dev`** → Compile JavaScript & CSS for development.
+#### ✔ **`npm run dev:js`** → Compile JavaScript only.
+#### ✔ **`npm run dev:css`** → Compile CSS only.
+#### ✔ **`npm run clean`** → Remove temporary files and ignored folders.
 
 ---
 
