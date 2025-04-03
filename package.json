@@ -17,6 +17,13 @@
 
     "clean": "rm -rf ./build ./dist ./.sass-cache"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moehabsas/ruya-newtab-page.git"
+  },
   "keywords": [
     "nodejs",
     "html",
